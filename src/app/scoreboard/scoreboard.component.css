@@ -1,0 +1,15 @@
+.left {
+    width: 50%;
+    float: left;
+}
+
+.right {
+    width: 50%;
+    float: right;
+}
+
+.add-button {
+    padding: .5rem 1.5rem;
+    margin: .5em;
+    font-size: 1rem;
+}
