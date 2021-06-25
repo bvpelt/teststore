@@ -6,6 +6,7 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MyCounterComponent } from './my-counter/my-counter.component';
 import { ScoreboardComponent } from './scoreboard/scoreboard.component';
+import { BookstoreComponent } from './bookstore/bookstore.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'scoreboard', component: ScoreboardComponent },
   { path: 'state', component: MyCounterComponent },
   { path: 'detail/:id', component: HeroDetailComponent },
+  { path: 'bookstore', component: BookstoreComponent },
   { path: 'heroes', component: HeroesComponent }
 ];
 

@@ -1,0 +1,9 @@
+<div class="content">
+    <label>User</label>
+    <div>
+        <select class="select-button" [(ngModel)]="selectedUser">
+            <option *ngFor="let user of users" [value]="user.id" [selected]="selectedUser.id == user.id">{{user.name}}
+            </option>
+        </select>
+    </div>
+</div>

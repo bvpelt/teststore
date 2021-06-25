@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { homeScore, guestScore, resetScore } from './scoreboard.actions';
-import { Game } from './game';
-import { MessageService } from '../message.service';
+import { Game } from '../model/game';
+import { MessageService } from '../services/message.service';
 
 @Component({
   selector: 'app-scoreboard',

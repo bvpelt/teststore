@@ -1,4 +1,4 @@
-import { Game } from './game';
+import { Game } from '../model/game';
 import { createAction, props } from '@ngrx/store';
 
 

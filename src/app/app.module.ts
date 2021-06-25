@@ -23,6 +23,7 @@ import { MyCounterComponent } from './my-counter/my-counter.component';
 import { ScoreboardComponent } from './scoreboard/scoreboard.component';
 
 import * as fromScoreboard from './scoreboard/scoreboard.reducer';
+import { BookstoreComponent } from './bookstore/bookstore.component';
 
 @NgModule({
   imports: [
@@ -50,7 +51,8 @@ import * as fromScoreboard from './scoreboard/scoreboard.reducer';
     MessagesComponent,
     HeroSearchComponent,
     MyCounterComponent,
-    ScoreboardComponent
+    ScoreboardComponent,
+    BookstoreComponent
   ],
   bootstrap: [AppComponent]
 })

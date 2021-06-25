@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { increment, decrement, reset } from '../counter/counter.actions';
-import { MessageService } from '../message.service';
+import { MessageService } from '../services/message.service';
+
 
 
 @Component({
