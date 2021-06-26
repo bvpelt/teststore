@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { User } from '../model/user';
+
 import { MessageService } from './message.service';
 
 @Injectable({
@@ -18,11 +19,12 @@ export class UserService {
 
   constructor(
     private http: HttpClient,
-    private messageService: MessageService) { }
+    private messageService: MessageService) {
+  }
 
   /** GET users from the server */
   getUsers(): Observable<User[]> {
-    return this.http.get<User[]>(this.usersUrl)
+    return this.http.get<User[]>(this.usersUrl, this.httpOptions)
       .pipe(
         tap(_ => this.log('fetched users')),
         catchError(this.handleError<User[]>('getUsers', []))
@@ -53,4 +55,5 @@ export class UserService {
   private log(message: string) {
     this.messageService.add(`HeroService: ${message}`);
   }
+
 }
