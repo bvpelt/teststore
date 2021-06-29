@@ -14,4 +14,14 @@
             </option>
         </select>
     </div>
+
+    <label> Select book</label>
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Books</mat-label>
+            <mat-select [formControl]="booklist" multiple>
+                <mat-option *ngFor="let book of books" [value]="book.id">{{book.name}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
 </div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { Store, select } from '@ngrx/store';
+
 import { Observable } from 'rxjs';
 
 import { AppState } from '../model/appstate';
@@ -20,12 +22,14 @@ export class BookstoreComponent implements OnInit {
   books: Book[] = [];
   selectedUser: User = {} as User;
   selectedBook: Book = {} as Book;
+  booklist: FormControl;
 
   constructor(private userService: UserService,
     private bookService: BookService,
     private messageService: MessageService,
     private store: Store<{ appstate: AppState }>) {
     this.appstate$ = store.pipe(select('appstate'));
+    this.booklist = new FormControl();
   }
 
   ngOnInit(): void {

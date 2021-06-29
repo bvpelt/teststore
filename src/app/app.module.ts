@@ -4,7 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { StoreModule } from '@ngrx/store';
-
+import { MatSelectModule } from '@angular/material/select';
+import { MatSliderModule } from '@angular/material/slider';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
@@ -24,6 +25,7 @@ import { ScoreboardComponent } from './scoreboard/scoreboard.component';
 
 import * as fromScoreboard from './scoreboard/scoreboard.reducer';
 import { BookstoreComponent } from './bookstore/bookstore.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
@@ -31,6 +33,8 @@ import { BookstoreComponent } from './bookstore/bookstore.component';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    MatSelectModule,
+    MatSliderModule,
 
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
@@ -42,6 +46,7 @@ import { BookstoreComponent } from './bookstore/bookstore.component';
       count: counterReducer,
       game: fromScoreboard.reducer
     }),
+    BrowserAnimationsModule,
   ],
   declarations: [
     AppComponent,
