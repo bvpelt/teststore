@@ -7,3 +7,23 @@
 .content {
     margin: .5em 0 0 0;
 }
+
+.listbox {
+    list-style-type: none;
+    padding: 0 0 0 12px;
+}
+
+.listbox li {
+    color: #333;
+    text-decoration: none;
+}
+
+.listbox li:hover {
+    color: #2c3a41;
+    background-color: #e6e6e6;
+}
+
+.listbox li:active {
+    background-color: #525252;
+    color: #fafafa;
+}

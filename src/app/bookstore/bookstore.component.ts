@@ -42,4 +42,8 @@ export class BookstoreComponent implements OnInit {
     this.bookService.getBooks()
       .subscribe(books => this.books = books);
   }
+
+  selectBook(index: number): void {
+    this.messageService.add("Select book: [" + index + "] id: " + this.books[index].id + " - " + this.books[index].name);
+  }
 }

@@ -14,4 +14,13 @@
             </option>
         </select>
     </div>
+
+    <label>Select Books</label>
+    <div>
+        <ul class="listbox">
+            <li *ngFor="let book of books; let i = index" (click)="selectBook(i)">
+                {{book.name}}
+            </li>
+        </ul>
+    </div>
 </div>
