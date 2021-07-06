@@ -10,8 +10,8 @@ export const initialBookstoreState: AppState = {
 
 const bookstoreReducer = createReducer(
     initialBookstoreState,
-    on(BookstorePageActions.setUser, (state, { appstate }) => ({ selectedUser: appstate.selectedUser, allBooks: appstate.allBooks })),
-    on(BookstorePageActions.addBooks, (state, { appstate }) => ({ selectedUser: appstate.selectedUser, allBooks: appstate.allBooks }))
+    on(BookstorePageActions.setUser, (state, { user }) => ({ ...state, selectedUser: user, allBooks: [] })),
+    on(BookstorePageActions.addBooks, (state, { book }) => ({ ...state, allbooks: state.allBooks.push(book) }))
 );
 
 export function reducer(state: AppState | undefined, action: Action) {

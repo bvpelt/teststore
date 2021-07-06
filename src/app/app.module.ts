@@ -23,6 +23,7 @@ import { MyCounterComponent } from './my-counter/my-counter.component';
 import { ScoreboardComponent } from './scoreboard/scoreboard.component';
 
 import * as fromScoreboard from './scoreboard/scoreboard.reducer';
+import * as fromBookstore from './bookstore/bookstore.reducer';
 import { BookstoreComponent } from './bookstore/bookstore.component';
 
 @NgModule({
@@ -40,6 +41,7 @@ import { BookstoreComponent } from './bookstore/bookstore.component';
     ),
     StoreModule.forRoot({
       count: counterReducer,
+      appstate: fromBookstore.reducer,
       game: fromScoreboard.reducer
     }),
   ],

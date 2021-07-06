@@ -24,7 +24,7 @@ export class BookService {
   getBooks(): Observable<Book[]> {
     return this.http.get<Book[]>(this.booksUrl, this.httpOptions)
       .pipe(
-        tap(_ => this.log('fetched users')),
+        tap(_ => this.log('fetched books')),
         catchError(this.handleError<Book[]>('getBooks', []))
       );
   }

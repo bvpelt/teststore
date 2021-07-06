@@ -1,8 +1,9 @@
 <div class="content">
     <label>User</label>
     <div>
-        <select class="select-button" [(ngModel)]="selectedUser">
-            <option *ngFor="let user of users" [value]="user.id" [selected]="selectedUser.id == user.id">{{user.name}}
+        <select class="select-button" [(ngModel)]="selectedUser" (ngModelChange)="mySelectUserHandler($event)">
+            <option *ngFor="let user of users" [value]="user.id" [selected]="selectedUser.id == user.id">
+                {{user.name}}
             </option>
         </select>
     </div>
@@ -10,17 +11,27 @@
     <label>Book</label>
     <div>
         <select class="select-button" [(ngModel)]="selectedBook">
-            <option *ngFor="let book of books" [value]="book.id" [selected]="selectedBook.id == book.id">{{book.name}}
+            <option *ngFor="let book of books" [value]="book.id" [selected]="selectedBook.id == book.id">
+                {{book.name}}
             </option>
         </select>
     </div>
 
-    <label>Select Books</label>
+    <div *ngIf="currentSelectedUser > 0">
+        <label>Select Books</label>
+        <div>
+            <ul class="listbox">
+                <li *ngFor="let book of books; let i = index" (click)="selectBook(i)">
+                    {{book.name}}
+                </li>
+            </ul>
+        </div>
+    </div>
+
     <div>
-        <ul class="listbox">
-            <li *ngFor="let book of books; let i = index" (click)="selectBook(i)">
-                {{book.name}}
-            </li>
-        </ul>
+        <label> in store</label>
+        <div *ngIf="selectedBooks.length > 0">
+            <label>user</label>{{ (appstate$ | async) }}
+        </div>
     </div>
 </div>
